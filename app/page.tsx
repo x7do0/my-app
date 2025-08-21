@@ -65,35 +65,29 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Welcome Section */}
-      <div className="px-6 pt-8 pb-6">
+      {/* Welcome Section + Stage Grid */}
+      <div className="mx-6 p-6 rounded-3xl border border-cyan-400/25 bg-white/5 backdrop-blur-lg">
         <h1
-          className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-white via-cyan-200 to-blue-300 bg-clip-text text-transparent"
+          className="text-4xl font-bold text-white mb-2"
           data-spec-id="welcome-title"
         >
           Welcome back!
         </h1>
         <p
-          className="text-lg text-cyan-200/70 border-b border-cyan-400/20 pb-2 inline-block"
+          className="text-lg text-cyan-200/70 border-b border-cyan-400/20 pb-2 inline-block mb-6"
           data-spec-id="welcome-subtitle"
         >
-          Choose your stage to continue
+          Chouse your stage to continue
         </p>
-      </div>
 
-      {/* Stage Selection */}
-      <div className="px-6 flex-1">
         <div
-          className="inline-block px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-cyan-400/30 shadow-lg shadow-cyan-400/10 mb-6"
+          className="inline-block px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-cyan-400/30 shadow-lg shadow-cyan-400/10 mb-6 mx-auto"
           data-spec-id="stage-selection-chip"
         >
           <span className="text-cyan-300 font-medium">Stage Selection</span>
         </div>
 
-        <div
-          className="p-6 rounded-3xl bg-white/5 backdrop-blur-lg border border-cyan-400/20 shadow-2xl shadow-cyan-400/10"
-          data-spec-id="stage-grid-container"
-        >
+        <div data-spec-id="stage-grid-container">
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((stage) => (
               <StageCard
