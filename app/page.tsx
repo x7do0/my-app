@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Search, Bell, Home, Download, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { StageCard } from "@/components/stage-card"
 
 
 const Index = () => {
@@ -95,16 +96,11 @@ const Index = () => {
         >
           <div className="grid grid-cols-2 gap-4">
             {[1, 2, 3, 4].map((stage) => (
-              <Button
+              <StageCard
                 key={stage}
-                onClick={() => handleStageClick(stage)}
-                className="h-24 rounded-2xl bg-white/10 backdrop-blur-sm border border-cyan-400/30 hover:bg-white/20 hover:border-cyan-400/50 transition-all duration-300 shadow-lg shadow-cyan-400/10 hover:shadow-cyan-400/20 flex flex-col gap-2"
-                variant="ghost"
-                data-spec-id={`stage-${stage}-card`}
-              >
-                <span className="text-xl font-bold text-white">Stage {stage}</span>
-                <span className="text-sm text-cyan-200/70">Tap to open</span>
-              </Button>
+                stage={stage}
+                onClick={handleStageClick}
+              />
             ))}
           </div>
         </div>
