@@ -235,31 +235,35 @@ const Index = () => {
                   { id: "downloads", icon: Download, label: "Downloads" },
                   { id: "settings", icon: Settings, label: "Settings" }
                 ].map(({ id, icon: Icon, label }) => (
-                  <Button
+                  <div
                     key={id}
-                    onClick={() => handleTabClick(id)}
-                    variant="ghost"
-                    className={`flex flex-col items-center gap-1 h-auto p-2 rounded-xl transition-all duration-300
-              ${activeTab === id
-                        ? "text-cyan-200 bg-white/10 border border-cyan-400/40 shadow-[0_0_30px_-6px_rgba(56,189,248,.45)]"
-                        : "text-cyan-200/70 hover:text-cyan-200 hover:bg-white/5"}`}
-                    data-spec-id={`nav-${id}`}
+                    className="backdrop-blur-xl bg-white/8 border border-cyan-400/25 rounded-3xl px-3 py-2"
                   >
-                    <div className="relative">
-                      <Icon className="w-5 h-5" />
-                      {id === "notifications" && notificationCount > 0 && (
-                        <Badge className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-[10px] flex items-center justify-center border-0 p-0">
-                          {notificationCount}
-                        </Badge>
-                      )}
-                      {id === "downloads" && downloadCount > 0 && (
-                        <Badge className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-[10px] flex items-center justify-center border-0 p-0">
-                          {downloadCount}
-                        </Badge>
-                      )}
-                    </div>
-                    <span className="text-xs">{label}</span>
-                  </Button>
+                    <Button
+                      onClick={() => handleTabClick(id)}
+                      variant="ghost"
+                      className={`flex flex-col items-center gap-1 h-auto p-2 rounded-xl transition-all duration-300
+                ${activeTab === id
+                          ? "text-cyan-200 bg-white/10 border border-cyan-400/40 shadow-[0_0_30px_-6px_rgba(56,189,248,.45)]"
+                          : "text-cyan-200/70 hover:text-cyan-200 hover:bg-white/5"}`}
+                      data-spec-id={`nav-${id}`}
+                    >
+                      <div className="relative">
+                        <Icon className="w-5 h-5" />
+                        {id === "notifications" && notificationCount > 0 && (
+                          <Badge className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-[10px] flex items-center justify-center border-0 p-0">
+                            {notificationCount}
+                          </Badge>
+                        )}
+                        {id === "downloads" && downloadCount > 0 && (
+                          <Badge className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-[10px] flex items-center justify-center border-0 p-0">
+                            {downloadCount}
+                          </Badge>
+                        )}
+                      </div>
+                      <span className="text-xs">{label}</span>
+                    </Button>
+                  </div>
                 ))}
               </div>
             </div>
