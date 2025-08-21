@@ -84,7 +84,7 @@ const Index = () => {
       {/* Stage Selection */}
       <div className="px-6 flex-1">
         <div
-          className="inline-block px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-cyan-400/30 shadow-lg shadow-cyan-400/10 mb-6"
+          className="inline-block px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-cyan-400/40 shadow-lg shadow-cyan-400/10 mb-6"
           data-spec-id="stage-selection-chip"
         >
           <span className="text-cyan-300 font-medium">Stage Selection</span>
